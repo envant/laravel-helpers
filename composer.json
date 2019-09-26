@@ -1,0 +1,40 @@
+{
+    "name": "envant/helpers",
+    "description": "Laravel Helpers",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Boris Lepikhin",
+            "email": "info@envant.me",
+            "homepage": "https://envant.me"
+        }
+    ],
+    "homepage": "https://github.com/envant/helpers",
+    "keywords": ["Laravel", "Helpers"],
+    "require": {
+        "illuminate/support": "~5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3.0",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Envant\\Helpers\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Envant\\Helpers\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Envant\\Helpers\\HelpersServiceProvider"
+            ]
+        }
+    }
+}
