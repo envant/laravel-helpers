@@ -53,9 +53,10 @@ class ModelMapper
      */
     public static function getEntity(string $modelName, int $modelId): Model
     {
-        $model = static::getModel($modelName)->whereId($modelId)->firstOrFail();
+        $model = static::getModel($modelName);
+        $entity = $model->where($model->getKeyName(), $modelId)->firstOrFail();
 
-        return $model;
+        return $entity;
     }
 
     /**
