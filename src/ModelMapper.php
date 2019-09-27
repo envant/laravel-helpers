@@ -73,12 +73,13 @@ class ModelMapper
     /**
      * Get an alias by model name
      *
-     * @return array
+     * @return string|null
      */
-    public static function getAlias($modelName): array
+    public static function getAlias($modelName): ?string
     {
         $morphMap = Relation::morphMap();
         $modelNames = array_flip($morphMap);
-        return $modelNames[$modelName];
+
+        return isset($modelNames[$modelName]) ? $modelNames[$modelName] : null;
     }
 }
